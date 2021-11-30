@@ -5,7 +5,9 @@ public class Guitar {
 	GuitarSpec spec;
 	
 	public Guitar(String serialNum, double price, Builder builder, String model, Type type, Wood backWood, Wood topWood) {
-		this.spec = new GuitarSpec(builder, model, type, backWood, topWood); // todo: add specs in guitarspec
+		this.serialNumber = serialNum;
+		this.price = price;
+		this.spec = new GuitarSpec(builder, model, type, backWood, topWood);
 	}
 
 	public String getSerialNumber() {
