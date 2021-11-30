@@ -34,7 +34,7 @@ public class Inventory {
 	}
 	
 	public void addDrum(String serialNum, double price, Builder builder, String model, DrumType type, Wood wood, DrumHead drumHead) {
-		drumList.add(new Drum(serialNum, price, builder, model, type, woodm drumHead));
+		drumList.add(new Drum(serialNum, price, builder, model, type, wood, drumHead));
 	}
 
 	public Guitar getGuitar(String specs) {
