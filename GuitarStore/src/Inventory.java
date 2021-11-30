@@ -46,7 +46,7 @@ public class Inventory {
 	}
 	
 	public Drum getDrum(String specs) {
-		
+		return null;
 	}
 
 	public ArrayList<Guitar> search(GuitarSpec spec) {
