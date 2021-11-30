@@ -7,6 +7,15 @@ public class GuitarSpec {
 	Wood backWood;
 	Wood topWood;
 	
+	public GuitarSpec(Builder builder, String model, Type type, Wood backWood, Wood topWood) {
+		this.builder = builder;
+		this.model = model;
+		this.type = type;
+		this.backWood = backWood;
+		this.topWood = topWood;
+	}
+	
+	
 	public Builder getBuilder() {
 		return this.builder;
 	}
