@@ -1,8 +1,6 @@
 
-public class GuitarSpec {
+public class GuitarSpec extends Spec{
 
-	Builder builder;
-	String model;
 	GuitarType type;
 	Wood backWood;
 	Wood topWood;

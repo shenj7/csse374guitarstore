@@ -6,12 +6,8 @@ public class Inventory {
 	ArrayList<Drum> drumList;
 	boolean isEmployee;
 	String guitarFile;
-	String pinaoFile;
+	String pianoFile;
 	String drumFile;
-	
-	public static void main(String[] args) {
-		System.out.println("Welcome to Rick's Guitar Shop!");
-	}
 
 	public void loadGuitars() {
 		

@@ -1,8 +1,6 @@
 
-public class DrumSpec {
+public class DrumSpec extends Spec{
 
-	Builder builder;
-	String model;
 	DrumType type;
 	Wood wood;
 	DrumHead drumHead;

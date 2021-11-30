@@ -1,8 +1,6 @@
 
-public class PianoSpec {
+public class PianoSpec extends Spec{
 
-	Builder builder;
-	String model;
 	PianoType type;
 	Wood wood;
 	
