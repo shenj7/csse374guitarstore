@@ -1,5 +1,5 @@
 
-public class Guitar {
+public class Drum {
 	String serialNumber;
 	double price;
 	GuitarSpec spec;

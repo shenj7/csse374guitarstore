@@ -3,11 +3,11 @@ public class GuitarSpec {
 
 	Builder builder;
 	String model;
-	Type type;
+	GuitarType type;
 	Wood backWood;
 	Wood topWood;
 	
-	public GuitarSpec(Builder builder, String model, Type type, Wood backWood, Wood topWood) {
+	public GuitarSpec(Builder builder, String model, GuitarType type, Wood backWood, Wood topWood) {
 		this.builder = builder;
 		this.model = model;
 		this.type = type;
@@ -24,7 +24,7 @@ public class GuitarSpec {
 		return this.model;
 	}
 	
-	public Type getType() {
+	public GuitarType getType() {
 		return this.type;
 	}
 	

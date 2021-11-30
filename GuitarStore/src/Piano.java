@@ -1,13 +1,13 @@
 
-public class Guitar {
+public class Piano {
 	String serialNumber;
 	double price;
-	GuitarSpec spec;
+	PianoSpec spec;
 	
-	public Guitar(String serialNum, double price, Builder builder, String model, GuitarType type, Wood backWood, Wood topWood) {
+	public Piano(String serialNum, double price, Builder builder, String model, PianoType type) {
 		this.serialNumber = serialNum;
 		this.price = price;
-		this.spec = new GuitarSpec(builder, model, type, backWood, topWood);
+		this.spec = new PianoSpec(builder, model, type);
 	}
 
 	public String getSerialNumber() {
@@ -22,7 +22,7 @@ public class Guitar {
 		this.price = price;
 	}
 
-	public GuitarSpec getSpec() {
+	public PianoSpec getSpec() {
 		return this.spec;
 	}
 }
