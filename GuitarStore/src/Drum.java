@@ -2,12 +2,12 @@
 public class Drum {
 	String serialNumber;
 	double price;
-	GuitarSpec spec;
+	DrumSpec spec;
 	
-	public Guitar(String serialNum, double price, Builder builder, String model, GuitarType type, Wood backWood, Wood topWood) {
+	public Drum(String serialNum, double price, Builder builder, String model, DrumType type, Wood wood, DrumHead drumHead) {
 		this.serialNumber = serialNum;
 		this.price = price;
-		this.spec = new GuitarSpec(builder, model, type, backWood, topWood);
+		this.spec = new DrumSpec(builder, model, type, wood, drumHead);
 	}
 
 	public String getSerialNumber() {
@@ -22,7 +22,7 @@ public class Drum {
 		this.price = price;
 	}
 
-	public GuitarSpec getSpec() {
+	public DrumSpec getSpec() {
 		return this.spec;
 	}
 }

@@ -4,10 +4,10 @@ public class Piano {
 	double price;
 	PianoSpec spec;
 	
-	public Piano(String serialNum, double price, Builder builder, String model, PianoType type) {
+	public Piano(String serialNum, double price, Builder builder, String model, PianoType type, Wood wood) {
 		this.serialNumber = serialNum;
 		this.price = price;
-		this.spec = new PianoSpec(builder, model, type);
+		this.spec = new PianoSpec(builder, model, type, wood);
 	}
 
 	public String getSerialNumber() {

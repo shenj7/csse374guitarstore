@@ -4,13 +4,13 @@ public class PianoSpec {
 	Builder builder;
 	String model;
 	PianoType type;
-	Wood backWood;
-	Wood topWood;
+	Wood wood;
 	
-	public PianoSpec(Builder builder, String model, PianoType type) {
+	public PianoSpec(Builder builder, String model, PianoType type, Wood wood) {
 		this.builder = builder;
 		this.model = model;
 		this.type = type;
+		this.wood = wood;
 	}
 	
 	
