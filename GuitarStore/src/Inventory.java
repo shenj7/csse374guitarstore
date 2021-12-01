@@ -1,3 +1,4 @@
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -38,8 +39,25 @@ public class Inventory {
 		addDrum("34567", 14, Builder.GIBSON, "SomeModel", DrumType.ELECTRONIC, Wood.WALNUT, DrumHead.AMBASSADOR);
 	}
 
-	public void loadGuitars() {
-		
+	public void loadGuitars() throws IOException {
+		try (BufferedReader reader  = new BufferedReader(new FileReader("guitar.txt"))) {
+		    String line;
+		    while ((line = reader.readLine()) != null) {
+		       String[] props = line.split("[,]");
+		       String serialNum = props[0];
+		       double price = Double.parseDouble(props[1]);
+		       Builder builder = Builder.valueOf(props[2]);
+		       String model = props[3];
+		       GuitarType type = GuitarType.valueOf(props[4]);
+		       Wood topWood = Wood.valueOf(props[5]);
+		       Wood backWood = Wood.valueOf(props[6]);
+		       guitarList.add(new Guitar(serialNum, price, builder, model, type, topWood, backWood));
+		    }
+			System.out.println(guitarList);
+		} catch (FileNotFoundException e) {
+			System.out.println("file not exist");
+			e.printStackTrace();
+		}
 	}
 	
 	public void loadPiano() {
@@ -86,7 +104,7 @@ public class Inventory {
 		}
 	}
 
-	public Guitar getGuitar(String specs) {
+	public Guitar getGuitar(String specs) { // return with serial number
 		return null;
 	}
 	
