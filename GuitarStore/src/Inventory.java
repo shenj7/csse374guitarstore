@@ -12,7 +12,7 @@ public class Inventory {
 	static ArrayList<Drum> drumList = new ArrayList<Drum>();
 	boolean isEmployee;
 	String guitarFile;
-	String pinaoFile;
+	String pianoFile;
 	String drumFile;
 	
 	public static void main(String[] args) {
