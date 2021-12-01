@@ -86,27 +86,69 @@ public class Inventory {
 		}
 	}
 
-	public Guitar getGuitar(String specs) {
+	public Guitar getGuitar(String serialNumber) {
+		
+		for(Guitar g : guitarList) {
+			if(g.serialNumber == serialNumber) {
+				return g;
+			} else {
+				System.out.println("Sorry, we don't have this guitar available.");
+			}
+		}
+		
 		return null;
 	}
 	
-	public Piano getPiano(String specs) {
+	public Piano getPiano(String serialNumber) {
+		for(Piano p : pianoList) {
+			if(p.serialNumber == serialNumber) {
+				return p;
+			} else {
+				System.out.println("Sorry, we don't have this piano available.");
+			}
+		}
+		
 		return null;
 	}
 	
-	public Drum getDrum(String specs) {
+	public Drum getDrum(String serialNumber) {
+		for(Drum d : drumList) {
+			if(d.serialNumber == serialNumber) {
+				return d;
+			} else {
+				System.out.println("Sorry, we don't have this piano available.");
+			}
+		}
 		return null;
 	}
 
 	public ArrayList<Guitar> search(GuitarSpec spec) {
-		return null;
+		ArrayList<Guitar> result = new ArrayList<Guitar>();
+		for(Guitar g : guitarList) {
+			if(g.getSpec().equals(spec)) {
+				result.add(g);
+			}
+		}
+		return result;
 	}
 	
 	public ArrayList<Piano> search(PianoSpec spec) {
-		return null;
+		ArrayList<Piano> result = new ArrayList<Piano>();
+		for(Piano p : pianoList) {
+			if(p.getSpec().equals(spec)) {
+				result.add(p);
+			}
+		}
+		return result;
 	}
 	
 	public ArrayList<Drum> search(DrumSpec spec) {
-		return null;
+		ArrayList<Drum> result = new ArrayList<Drum>();
+		for(Drum d : drumList) {
+			if(d.getSpec().equals(spec)) {
+				result.add(d);
+			}
+		}
+		return result;
 	}
 }
