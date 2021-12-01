@@ -1,1 +1,1 @@
-12345 12.5 Gibson Somemodel Counsole Piano Alder
+12345,12.5,GIBSON,Somemodel,CONSOLE,ALDER

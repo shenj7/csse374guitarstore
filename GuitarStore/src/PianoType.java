@@ -5,10 +5,10 @@ public enum PianoType {
 	@Override
 	public String toString() {
 		switch(this) {
-			case CONSOLE: return "Counsole Piano";
-			case STUDIO: return "Studio Piano";
-			case UPRIGHT: return "Upright Piano";
-			case DIGITAL: return "Digital Piano";
+			case CONSOLE: return "Console";
+			case STUDIO: return "Studio";
+			case UPRIGHT: return "Upright";
+			case DIGITAL: return "Digital";
 			default: return "unspecified";
 		}
 	}

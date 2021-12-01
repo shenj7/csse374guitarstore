@@ -4,10 +4,10 @@ public enum GuitarType {
 	
 	public String toString() {
 		switch(this) {
-			case CLASSICAL: return "Classical Guitar";
-			case ACOUSTIC: return "Acuostic Guitar";
-			case ELECTRIC: return "Electric Guitar";
-			case BASS: return "Bass Guitar";
+			case CLASSICAL: return "Classical";
+			case ACOUSTIC: return "Acoustic";
+			case ELECTRIC: return "Electric";
+			case BASS: return "Bass";
 			default: return "unspecified";
 		}
 	}

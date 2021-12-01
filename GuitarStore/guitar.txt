@@ -1,1 +1,1 @@
-23456 13.0 Yamaha SomeModel Acuostic Guitar Koa Basswood
+23412456,13.0,YAMAHA,SomeModel,ACOUSTIC,KOA,BASSWOOD

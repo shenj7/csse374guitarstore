@@ -1,1 +1,1 @@
-34567 14.0 Gibson SomeModel Electronic Drum Walnut Ambassador Drum Head
+34567,14.0,GIBSON,SomeModel,ELECTRONIC,WALNUT,AMBASSADOR

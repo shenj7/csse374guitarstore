@@ -5,10 +5,10 @@ public enum DrumType {
 	@Override
 	public String toString() {
 		switch(this) {
-			case SNARE: return "Snare Drum";
-			case TENOR: return "Tenor Drum";
-			case ELECTRONIC: return "Electronic Drum";
-			case TIMPANI: return "Timpani Drum";
+			case SNARE: return "Snare";
+			case TENOR: return "Tenor";
+			case ELECTRONIC: return "Electronic";
+			case TIMPANI: return "Timpani";
 			default: return "unspecified";
 		}
 	}

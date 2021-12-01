@@ -5,10 +5,10 @@ public enum DrumHead {
 	@Override
 	public String toString() {
 		switch(this) {
-			case CLEAR: return "Clear Drum Head";
-			case DRY: return "Dry Drum Head";
-			case BASS: return "Bass Drum Head";
-			case AMBASSADOR: return "Ambassador Drum Head";
+			case CLEAR: return "Clear";
+			case DRY: return "Dry";
+			case BASS: return "Bass";
+			case AMBASSADOR: return "Ambassador";
 			default: return "unspecified";
 		}
 	}
