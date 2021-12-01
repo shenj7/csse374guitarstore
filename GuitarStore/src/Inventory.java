@@ -54,7 +54,7 @@ public class Inventory {
 		guitarList.add(new Guitar(serialNum, price, builder, model, type, backWood, topWood));
 		try {
 			FileWriter writer = new FileWriter("guitar.txt");
-			writer.write(serialNum + " " + price + " " + builder.toString() + " " + model + " " + type.toString() + " " + backWood.toString() + " " + topWood.toString());
+			writer.write(serialNum + "," + price + "," + builder.toString() + "," + model + "," + type.toString() + "," + backWood.toString() + "," + topWood.toString());
 			writer.close();
 		} catch (IOException e) {
 			System.out.println("file not exist");
@@ -66,7 +66,7 @@ public class Inventory {
 		pianoList.add(new Piano(serialNum, price, builder, model, type, wood));
 		try {
 			FileWriter writer = new FileWriter("piano.txt");
-			writer.write(serialNum + " " + price + " " + builder.toString() + " " + model + " " + type.toString() + " " + wood.toString());
+			writer.write(serialNum + "," + price + "," + builder.toString() + "," + model + "," + type.toString() + "," + wood.toString());
 			writer.close();
 		} catch (IOException e) {
 			System.out.println("file not exist");
@@ -78,7 +78,7 @@ public class Inventory {
 		drumList.add(new Drum(serialNum, price, builder, model, type, wood, drumHead));
 		try {
 			FileWriter writer = new FileWriter("drum.txt");
-			writer.write(serialNum + " " + price + " " + builder.toString() + " " + model + " " + type.toString() + " " + wood.toString() + " " + drumHead.toString());
+			writer.write(serialNum + "," + price + "," + builder.toString() + "," + model + "," + type.toString() + "," + wood.toString() + "," + drumHead.toString());
 			writer.close();
 		} catch (IOException e) {
 			System.out.println("file not exist");
