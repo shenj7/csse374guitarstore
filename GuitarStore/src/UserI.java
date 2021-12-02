@@ -1,55 +1,84 @@
 import java.io.IOException;
+import java.util.Scanner;
 
 public class UserI {
 	public static void main(String[] args) {
 		String instrument = "";
 		Inventory currentInventory = new Inventory();
-		Boolean isEmployee = true;
+		Boolean isEmployee;
 		currentInventory.addPiano("12345", 12.5, Builder.GIBSON, "Somemodel", PianoType.CONSOLE, Wood.ALDER);
-		currentInventory.addGuitar("23456", 13, Builder.YAMAHA, "SomeModel", GuitarType.ACOUSTIC, Wood.KOA, Wood.BASSWOOD);
-		currentInventory.addGuitar("23412456", 13, Builder.YAMAHA, "SomeModel", GuitarType.ACOUSTIC, Wood.KOA, Wood.BASSWOOD);
-		currentInventory.addDrum("34567", 14, Builder.GIBSON, "SomeModel", DrumType.ELECTRONIC, Wood.WALNUT, DrumHead.AMBASSADOR);
+		currentInventory.addGuitar("23456", 13, Builder.YAMAHA, "SomeModel", GuitarType.ACOUSTIC, Wood.KOA,
+				Wood.BASSWOOD);
+		currentInventory.addGuitar("23412456", 13, Builder.YAMAHA, "SomeModel", GuitarType.ACOUSTIC, Wood.KOA,
+				Wood.BASSWOOD);
+		currentInventory.addDrum("34567", 14, Builder.GIBSON, "SomeModel", DrumType.ELECTRONIC, Wood.WALNUT,
+				DrumHead.AMBASSADOR);
 		try {
 			currentInventory.loadGuitars();
 			currentInventory.loadPianos();
 			currentInventory.loadDrums();
-			
+
 		} catch (IOException e) {
 			System.out.println("Cannot load guitars");
 			e.printStackTrace();
 		}
 		System.out.println("Welcome to Rick's Guitar Shop!");
 //		TODO: add scanners to check for responses
-		System.out.println("Are you an employee? Y/N");
-		if (isEmployee) {
-			System.out.println("Would you like to add or remove an instrument?");
-			System.out.println("What kind of instrument would you like to edit?(Drums, Guitars, or Pianos)");
-			if (instrument.equals("Drums")) {
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Are you an employee?");
+		while (!scanner.hasNext("[YN]")) { // regex for y/n
+			System.out.println("Y/N?");
+			scanner.next();
+		}
+		isEmployee = scanner.next().equals("Y");
+		if (isEmployee) { // Employee View
+			System.out.println("Would you like to add an instrument? (Y/N)");
+			while (!scanner.hasNext("[YN]")) { // regex for y/n
+				System.out.println("Y/N?");
+				scanner.next();
+			}
+			if (scanner.next() == "N") {
+				scanner.close();
+				return;
+			}
+			System.out.println("What kind of instrument would you like to add? (D)rums, (G)uitars, or (P)ianos");
+			while (!scanner.hasNext("[DGP]")) { // repeat until we get drums, guitars, or pianos
+				System.out.println("G/D/P?");
+				scanner.next();
+			}
+			instrument = scanner.next();
+			if (instrument.equals("D")) {
 //				TODO: drum actions
 			}
-			if (instrument.equals("Guitars")) {
+			if (instrument.equals("G")) {
 //				TODO: guitar actions
 			}
-			if (instrument.equals("Pianos")) {
+			if (instrument.equals("P")) {
 //				TODO: piano actions
 			}
 		} else { // Customer View
-			System.out.println("Would you like to search for Drums, Guitars, or Pianos?");
-			if (instrument.equals("Drums")) {
+			System.out.println("Would you like to search for (D)rums, (G)uitars, or (P)ianos?");
+			while (!scanner.hasNext("[DGP]")) { // repeat until we get drums, guitars, or pianos
+				System.out.println("G/D/P?");
+				scanner.next();
+			}
+			instrument = scanner.next();
+			if (instrument.equals("D")) {
 //			TODO: questions for drums
 				DrumSpec spec = null;
 				currentInventory.search(spec);
 			}
-			if (instrument.equals("Guitars")) {
+			if (instrument.equals("G")) {
 //			TODO: questions for guitars
 				GuitarSpec spec = null;
 				currentInventory.search(spec);
 			}
-			if (instrument.equals("Pianos")) {
+			if (instrument.equals("P")) {
 //			TODO: questions for pianos
 				PianoSpec spec = null;
 				currentInventory.search(spec);
 			}
 		}
+		scanner.close();
 	}
 }
