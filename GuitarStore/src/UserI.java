@@ -23,7 +23,6 @@ public class UserI {
 			e.printStackTrace();
 		}
 		System.out.println("Welcome to Rick's Guitar Shop!");
-//		TODO: add scanners to check for responses
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("Are you an employee?");
 		while (!scanner.hasNext("[YN]")) { // regex for y/n
@@ -48,10 +47,8 @@ public class UserI {
 			}
 			instrument = scanner.next();
 			if (instrument.equals("D")) {
-//				TODO: drum actions
 				System.out.println("Serial Number: ");
 				String serialNum = scanner.next();
-				
 				System.out.println("Price: ");
 				double price = Double.parseDouble(scanner.next());
 				System.out.println("Builder: ");
@@ -68,10 +65,38 @@ public class UserI {
 				System.out.println(currentInventory.drumList);
 			}
 			if (instrument.equals("G")) {
-//				TODO: guitar actions
+				System.out.println("Serial Number: ");
+				String serialNum = scanner.next();
+				System.out.println("Price: ");
+				double price = Double.parseDouble(scanner.next());
+				System.out.println("Builder: ");
+				Builder builder = Builder.valueOf(scanner.next().toUpperCase());
+				System.out.println("Model: ");
+				String model = scanner.next();
+				System.out.println("Guitar Type: ");
+				GuitarType type = GuitarType.valueOf(scanner.next().toUpperCase());
+				System.out.println("Top Wood: ");
+				Wood topWood =  Wood.valueOf(scanner.next().toUpperCase());
+				System.out.println("Bottom Wood: ");
+				Wood bottomWood =  Wood.valueOf(scanner.next().toUpperCase());
+				currentInventory.addGuitar(serialNum, price, builder, model, type, topWood, bottomWood);
+				System.out.println(currentInventory.guitarList);
 			}
 			if (instrument.equals("P")) {
-//				TODO: piano actions
+				System.out.println("Serial Number: ");
+				String serialNum = scanner.next();
+				System.out.println("Price: ");
+				double price = Double.parseDouble(scanner.next());
+				System.out.println("Builder: ");
+				Builder builder = Builder.valueOf(scanner.next().toUpperCase());
+				System.out.println("Model: ");
+				String model = scanner.next();
+				System.out.println("Piano Type: ");
+				PianoType type = PianoType.valueOf(scanner.next().toUpperCase());
+				System.out.println("Wood: ");
+				Wood wood =  Wood.valueOf(scanner.next().toUpperCase());
+				currentInventory.addPiano(serialNum, price, builder, model, type, wood);
+				System.out.println(currentInventory.pianoList);
 			}
 		} else { // Customer View
 			System.out.println("Would you like to search for (D)rums, (G)uitars, or (P)ianos?");
