@@ -82,18 +82,47 @@ public class UserI {
 			instrument = scanner.next();
 			if (instrument.equals("D")) {
 //			TODO: questions for drums
-				DrumSpec spec = null;
-				currentInventory.search(spec);
+				System.out.println("Builder: ");
+				Builder builder = Builder.valueOf(scanner.next().toUpperCase());
+				System.out.println("Model: ");
+				String model = scanner.next();
+				System.out.println("Drum Type: ");
+				DrumType type = DrumType.valueOf(scanner.next().toUpperCase());
+				System.out.println("Wood: ");
+				Wood wood =  Wood.valueOf(scanner.next().toUpperCase());
+				System.out.println("Drum Head: ");
+				DrumHead drumHead = DrumHead.valueOf(scanner.next().toUpperCase());
+				DrumSpec spec = new DrumSpec(builder, model, type, wood, drumHead);
+				System.out.println(currentInventory.search(spec).toString());
 			}
 			if (instrument.equals("G")) {
 //			TODO: questions for guitars
-				GuitarSpec spec = null;
-				currentInventory.search(spec);
+				System.out.println("Builder: ");
+				Builder builder = Builder.valueOf(scanner.next().toUpperCase());
+				System.out.println("Model: ");
+				String model = scanner.next();
+				System.out.println("Guitar Type: ");
+				GuitarType type = GuitarType.valueOf(scanner.next().toUpperCase());
+				System.out.println("Back Wood: ");
+				Wood backWood =  Wood.valueOf(scanner.next().toUpperCase());
+				System.out.println("Top Wood: ");
+				Wood topWood = Wood.valueOf(scanner.next().toUpperCase());
+				GuitarSpec spec = new GuitarSpec(builder, model, type, backWood, topWood);
+				System.out.println(currentInventory.search(spec).toString());
+//				System.out.println(currentInventory.search(spec).toString());
 			}
 			if (instrument.equals("P")) {
 //			TODO: questions for pianos
-				PianoSpec spec = null;
-				currentInventory.search(spec);
+				System.out.println("Builder: ");
+				Builder builder = Builder.valueOf(scanner.next().toUpperCase());
+				System.out.println("Model: ");
+				String model = scanner.next();
+				System.out.println("Piano Type: ");
+				PianoType type = PianoType.valueOf(scanner.next().toUpperCase());
+				System.out.println("Wood: ");
+				Wood wood =  Wood.valueOf(scanner.next().toUpperCase());
+				PianoSpec spec = new PianoSpec(builder, model, type, wood);
+				System.out.println(currentInventory.search(spec).toString());
 			}
 		}
 		scanner.close();

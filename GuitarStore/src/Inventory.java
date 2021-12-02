@@ -163,7 +163,9 @@ public class Inventory {
 	public ArrayList<Guitar> search(GuitarSpec spec) {
 		ArrayList<Guitar> result = new ArrayList<Guitar>();
 		for (Guitar g : guitarList) {
-			if (g.getSpec().equals(spec)) {
+			if (g.getSpec().getBackWood().equals(spec.getBackWood()) && g.getSpec().getBuilder().equals(spec.getBuilder())
+					&& g.getSpec().getTopeWood().equals(spec.getTopeWood()) && g.getSpec().getModel().equals(spec.getModel())
+					&& g.getSpec().getType().equals(spec.getType())) {
 				result.add(g);
 			}
 		}
@@ -173,7 +175,9 @@ public class Inventory {
 	public ArrayList<Piano> search(PianoSpec spec) {
 		ArrayList<Piano> result = new ArrayList<Piano>();
 		for (Piano p : pianoList) {
-			if (p.getSpec().equals(spec)) {
+			if (p.getSpec().getBuilder().equals(spec.getBuilder())
+					&& p.getSpec().getWood().equals(spec.getWood()) && p.getSpec().getModel().equals(spec.getModel())
+					&& p.getSpec().getType().equals(spec.getType())) {
 				result.add(p);
 			}
 		}
@@ -183,7 +187,9 @@ public class Inventory {
 	public ArrayList<Drum> search(DrumSpec spec) {
 		ArrayList<Drum> result = new ArrayList<Drum>();
 		for (Drum d : drumList) {
-			if (d.getSpec().equals(spec)) {
+			if (d.getSpec().getDrumHead().equals(spec.getDrumHead()) && d.getSpec().getBuilder().equals(spec.getBuilder())
+					&& d.getSpec().getDrumHead().equals(spec.getDrumHead()) && d.getSpec().getWood().equals(spec.getWood())
+					&& d.getSpec().getType().equals(spec.getType())) {
 				result.add(d);
 			}
 		}
