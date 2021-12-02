@@ -49,6 +49,23 @@ public class UserI {
 			instrument = scanner.next();
 			if (instrument.equals("D")) {
 //				TODO: drum actions
+				System.out.println("Serial Number: ");
+				String serialNum = scanner.next();
+				
+				System.out.println("Price: ");
+				double price = Double.parseDouble(scanner.next());
+				System.out.println("Builder: ");
+				Builder builder = Builder.valueOf(scanner.next().toUpperCase());
+				System.out.println("Model: ");
+				String model = scanner.next();
+				System.out.println("Drum Type: ");
+				DrumType type = DrumType.valueOf(scanner.next().toUpperCase());
+				System.out.println("Wood: ");
+				Wood wood =  Wood.valueOf(scanner.next().toUpperCase());
+				System.out.println("Drum Head: ");
+				DrumHead drumHead = DrumHead.valueOf(scanner.next().toUpperCase());
+				currentInventory.addDrum(serialNum, price, builder, model, type, wood, drumHead);
+				System.out.println(currentInventory.drumList);
 			}
 			if (instrument.equals("G")) {
 //				TODO: guitar actions
