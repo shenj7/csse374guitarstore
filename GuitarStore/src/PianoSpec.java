@@ -26,4 +26,8 @@ public class PianoSpec {
 		return this.type;
 	}
 	
+	public Wood getWood() {
+		return this.wood;
+	}
+	
 }
