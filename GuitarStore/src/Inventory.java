@@ -154,7 +154,7 @@ public class Inventory {
 			if (d.serialNumber == serialNumber) {
 				return d;
 			} else {
-				System.out.println("Sorry, we don't have this piano available.");
+				System.out.println("Sorry, we don't have this drum available.");
 			}
 		}
 		return null;
